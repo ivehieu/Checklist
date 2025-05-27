@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Xây Dựng Checklist Công Việc Hàng Ngày Hiệu Quả</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 
+        Chosen Palette: Coastal Breeze
+        Primary: #264653 (Dark Teal)
+        Secondary: #2A9D8F (Jungle Green)
+        Accent1: #E9C46A (Saffron)
+        Accent2: #F4A261 (Sandy Brown)
+        Background: #F0F4F8 (Very Light Gray)
+        Text: #333333 (Dark Gray)
+        White: #FFFFFF
+    -->
+    <!-- 
+        Narrative Plan (Kế hoạch tường thuật):
+        1. Giới thiệu: Tại sao Checklist lại Quan trọng? (Hook, định nghĩa, tầm quan trọng)
+        2. Lợi ích Vượt Trội: (Giải thích các lợi ích chính)
+        3. 7 Bước Vàng Xây Dựng Checklist: (Sơ đồ quy trình trực quan 7 bước)
+        4. Mẹo Hay Cho Checklist Hoàn Hảo: (Các mẹo chính để đạt hiệu quả)
+        5. Công Cụ Hỗ Trợ Đắc Lực: (Đề cập đến các công cụ phần mềm)
+        6. Thực Hành: Checklist Mẫu: (Hiển thị bảng checklist mẫu)
+        7. Công cụ AI hỗ trợ: (Các tính năng AI mới)
+        8. Lời kết: (Tóm tắt, lời kêu gọi hành động)
+    -->
+    <!-- 
+        Visualization Choices & Justification (Lựa chọn trực quan & Giải thích - Xác nhận KHÔNG SỬ DỤNG SVG, KHÔNG SỬ DỤNG MERMAID JS):
+        - Mục 1 (Giới thiệu): Câu tagline lớn & biểu tượng Unicode (Mục tiêu: Thông báo, Phương pháp: HTML/CSS, Giải thích: Tác động trực tiếp, KHÔNG SVG)
+        - Mục 2 (Lợi ích): Danh sách kiểu cách với biểu tượng Unicode (Mục tiêu: Thông báo, Phương pháp: HTML/CSS, Giải thích: Trình bày rõ ràng nhiều điểm, KHÔNG SVG)
+        - Mục 3 (7 Bước): Sơ đồ quy trình HTML/CSS (Mục tiêu: Tổ chức/Quy trình, Phương pháp: HTML/CSS có cấu trúc với Tailwind cho các hộp & đường nối, Giải thích: Trực quan hóa một chuỗi hiệu quả mà không cần SVG/Mermaid, KHÔNG SVG, KHÔNG MERMAID JS)
+        - Mục 4 (Mẹo): Bố cục dựa trên thẻ với biểu tượng Unicode (Mục tiêu: Thông báo, Phương pháp: HTML/CSS, Giải thích: Nêu bật các điểm tư vấn chính một cách rõ ràng, KHÔNG SVG)
+        - Mục 5 (Công cụ): Danh sách kiểu cách với biểu tượng Unicode chung (Mục tiêu: Thông báo, Phương pháp: HTML/CSS, Giải thích: Liệt kê các công cụ mà không dựa vào hình ảnh bên ngoài/SVG, KHÔNG SVG)
+        - Mục 6 (Checklist Mẫu): Bảng HTML (Mục tiêu: Tổ chức/Thông báo, Phương pháp: HTML/CSS, Giải thích: Cách tiêu chuẩn để trình bày dữ liệu dạng bảng, KHÔNG SVG)
+        - Mục 7 (Công cụ AI): Các khối nhập liệu và hiển thị kết quả AI (Mục tiêu: Hỗ trợ, Phương pháp: HTML/CSS, JavaScript với Gemini API, Giải thích: Cung cấp tính năng tương tác hỗ trợ người dùng, KHÔNG SVG)
+        - Mục 8 (Kết luận): Khối văn bản kiểu cách (Mục tiêu: Thông báo, Phương pháp: HTML/CSS, Giải thích: Trình bày văn bản tiêu chuẩn, KHÔNG SVG)
+        - Tổng thể: Chart.js và Plotly.js được coi là không cần thiết cho nội dung định tính/quy trình cụ thể này để duy trì sự rõ ràng và tuân thủ nguồn. Tập trung vào hình ảnh dựa trên HTML/CSS mạnh mẽ.
+        - Xác nhận: KHÔNG sử dụng Mermaid JS HAY SVG ở bất kỳ đâu trong đầu ra.
+    -->
+    <style>
+        body { 
+            font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif; /* Tailwind's default sans-serif stack is good, Roboto is a common choice */
+            scroll-behavior: smooth;
+        }
+        .bg-primary { background-color: #264653; }
+        .text-primary { color: #264653; }
+        .border-primary { border-color: #264653; }
+        .bg-secondary { background-color: #2A9D8F; }
+        .text-secondary { color: #2A9D8F; }
+        .border-secondary { border-color: #2A9D8F; }
+        .bg-accent1 { background-color: #E9C46A; }
+        .text-accent1 { color: #E9C46A; }
+        .bg-accent2 { background-color: #F4A261; }
+        .text-accent2 { color: #F4A261; }
+        .bg-light-gray { background-color: #F0F4F8; }
+        .text-dark-gray { color: #333333; }
+
+        .flowchart-step {
+            border: 2px solid #2A9D8F; 
+            padding: 1.5rem; /* p-6 */
+            margin-bottom: 1rem; /* mb-4 */
+            text-align: center;
+            border-radius: 0.5rem; /* rounded-lg */
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* shadow-md */
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .flowchart-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
+        }
+        .flowchart-step-number {
+            background-color: #E9C46A; /* bg-accent1 */
+            color: #264653; /* text-primary for contrast on yellow */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: bold;
+            width: 2rem; /* w-8 */
+            height: 2rem; /* h-8 */
+            line-height: 2rem; /* for vertical centering */
+            border-radius: 9999px; /* rounded-full */
+            position: absolute;
+            top: -1rem; /* -top-4 */
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid white;
+        }
+        .flowchart-connector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 2.5rem; /* h-10 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        .flowchart-connector::after {
+            content: '▼'; 
+            font-size: 1.875rem; /* text-3xl */
+            color: #2A9D8F; /* text-secondary */
+        }
+        .section-title {
+            font-size: 2rem; /* text-3xl */
+            line-height: 2.5rem; /* leading-9 */
+            font-weight: 700; /* font-bold */
+            margin-bottom: 1.5rem; /* mb-6 */
+            color: #264653; /* text-primary */
+            text-align: center;
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.25rem; /* md:text-4xl */
+                line-height: 2.75rem; /* md:leading-10 */
+            }
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            padding: 1.5rem; /* p-6 */
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04); /* shadow-md */
+            margin-bottom: 1.5rem; /* mb-6 */
+            transition: box-shadow 0.3s ease;
+        }
+        .card:hover {
+             box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); /* shadow-lg */
+        }
+        .icon-style {
+            font-size: 1.75rem; /* text-2xl or text-3xl depending on context */
+            margin-right: 0.75rem; /* mr-3 */
+            color: #2A9D8F; /* text-secondary */
+            display: inline-block; /* to align with text properly */
+            vertical-align: middle;
+        }
+        /* Custom scrollbar for a more polished look - optional */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F0F4F8; /* bg-light-gray */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2A9D8F; /* bg-secondary */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #264653; /* bg-primary */
+        }
+        /* Sticky Navigation - Basic Example */
+        #sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-light-gray text-dark-gray antialiased">
+    <header class="bg-primary text-white py-10 text-center shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-5xl font-bold leading-tight">Bí Quyết Xây Dựng Checklist Công Việc Hàng Ngày Hiệu Quả</h1>
+            <p class="mt-3 text-lg md:text-xl text-gray-200">Khám phá công cụ đơn giản giúp bạn làm chủ thời gian và bùng nổ năng suất!</p>
+        </div>
+    </header>
+
+    <nav id="sticky-nav" class="hidden md:block">
+        <div class="container mx-auto px-4">
+            <ul class="flex justify-center space-x-6">
+                <li><a href="#gioi-thieu" class="text-primary hover:text-secondary font-medium">Giới Thiệu</a></li>
+                <li><a href="#loi-ich" class="text-primary hover:text-secondary font-medium">Lợi Ích</a></li>
+                <li><a href="#7-buoc" class="text-primary hover:text-secondary font-medium">7 Bước</a></li>
+                <li><a href="#meo-hay" class="text-primary hover:text-secondary font-medium">Mẹo Hay</a></li>
+                <li><a href="#cong-cu" class="text-primary hover:text-secondary font-medium">Công Cụ</a></li>
+                <li><a href="#thuc-hanh" class="text-primary hover:text-secondary font-medium">Thực Hành</a></li>
+                <li><a href="#ai-tools" class="text-primary hover:text-secondary font-medium">Công Cụ AI</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8 md:py-12">
+
+        <section id="gioi-thieu" class="my-10 md:my-16 scroll-mt-20">
+            <h2 class="section-title">Tại Sao Checklist Lại Quan Trọng?</h2>
+            <div class="card text-center max-w-3xl mx-auto">
+                <p class="text-2xl md:text-3xl font-semibold text-secondary mb-4">"Checklist: Công cụ đơn giản, hiệu quả phi thường!"</p>
+                <p class="text-lg text-gray-700 mb-6">Checklist công việc hàng ngày là một danh sách các nhiệm vụ cần hoàn thành, giúp bạn kiểm soát tiến độ, ưu tiên công việc quan trọng và đảm bảo không bỏ sót bất kỳ đầu việc nào. Đây là chìa khóa để nâng cao năng suất cá nhân và tổ chức một cách khoa học.</p>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-10 text-secondary">
+                    <div class="flex flex-col items-center p-3 rounded-lg min-w-[100px]">
+                        <span class="text-4xl md:text-5xl">✓</span>
+                        <span class="mt-1 text-sm md:text-base text-dark-gray font-medium">Hoàn thành</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 rounded-lg min-w-[100px]">
+                        <span class="text-4xl md:text-5xl">🎯</span>
+                        <span class="mt-1 text-sm md:text-base text-dark-gray font-medium">Tập trung</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 rounded-lg min-w-[100px]">
+                        <span class="text-4xl md:text-5xl">⏰</span>
+                        <span class="mt-1 text-sm md:text-base text-dark-gray font-medium">Tiết kiệm thời gian</span>
+                    </div>
+                     <div class="flex flex-col items-center p-3 rounded-lg min-w-[100px]">
+                        <span class="text-4xl md:text-5xl">📈</span>
+                        <span class="mt-1 text-sm md:text-base text-dark-gray font-medium">Nâng cao hiệu suất</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="loi-ich" class="my-10 md:my-16 scroll-mt-20">
+            <h2 class="section-title">Lợi Ích Vượt Trội Của Checklist</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-2 flex items-center"><span class="icon-style">📝</span>Xác định rõ nhiệm vụ</h3>
+                    <p class="text-gray-700">Giúp bạn biết chính xác những gì cần làm trong ngày, không bỏ sót việc quan trọng, giảm thiểu sự mơ hồ.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-2 flex items-center"><span class="icon-style">🥇</span>Ưu tiên hiệu quả</h3>
+                    <p class="text-gray-700">Hỗ trợ sắp xếp thứ tự ưu tiên, tập trung nguồn lực vào những việc mang lại giá trị cao nhất và đúng thời điểm.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-2 flex items-center"><span class="icon-style">📊</span>Theo dõi tiến độ</h3>
+                    <p class="text-gray-700">Dễ dàng giám sát quá trình làm việc, đánh giá hiệu suất cá nhân hoặc đội nhóm và có điều chỉnh kịp thời.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-2 flex items-center"><span class="icon-style">😊</span>Tạo động lực & giảm stress</h3>
+                    <p class="text-gray-700">Cảm giác hoàn thành khi đánh dấu xong từng nhiệm vụ, tạo sự hứng khởi, giảm căng thẳng và tăng sự hài lòng.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="7-buoc" class="my-10 md:my-16 scroll-mt-20">
+            <h2 class="section-title">7 Bước Vàng Xây Dựng Checklist</h2>
+            <p class="text-center text-lg text-gray-700 mb-8 md:mb-10 max-w-2xl mx-auto">Áp dụng quy trình 7 bước đơn giản nhưng khoa học này để tạo ra checklist hoàn hảo, phù hợp với mọi nhu cầu công việc của bạn.</p>
+            <div class="max-w-2xl mx-auto">
+                <div class="flowchart-step">
+                    <div class="flowchart-step-number">1</div>
+                    <h3 class="text-xl font-semibold text-primary mt-4 mb-1">Xác định mục tiêu của checklist</h3>
+                    <p class="text-gray-600 text-sm">Mục tiêu SMART: Cụ thể, Đo lường được, Khả thi, Liên quan, Có thời hạn. Ví dụ: “Hoàn thành báo cáo doanh số Quý 2 trước ngày 27/05”.</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-step">
+                    <div class="flowchart-step-number">2</div>
+                    <h3 class="text-xl font-semibold text-primary mt-4 mb-1">Liệt kê các nhiệm vụ cần thực hiện</h3>
+                    <p class="text-gray-600 text-sm">Ghi lại toàn bộ công việc. Chia nhỏ việc lớn thành các nhiệm vụ cụ thể, dễ quản lý. Dùng động từ hành động: "Soạn thảo...", "Kiểm tra...", "Lên kế hoạch...".</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-step">
+                    <div class="flowchart-step-number">3</div>
+                    <h3 class="text-xl font-semibold text-primary mt-4 mb-1">Sắp xếp công việc theo trình tự & mức độ ưu tiên</h3>
+                    <p class="text-gray-600 text-sm">Theo logic hoặc khung giờ. Phân loại ưu tiên (Cao/Trung bình/Thấp, ma trận Eisenhower: Khẩn cấp/Quan trọng). Việc quan trọng nhất lên đầu.</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-step">
+                    <div class="flowchart-step-number">4</div>
+                    <h3 class="text-xl font-semibold text-primary mt-4 mb-1">Thiết kế và định dạng bố cục checklist</h3>
+                    <p class="text-gray-600 text-sm">Dạng bảng hoặc danh sách có ô tick (checkbox). Cột cần thiết: Thời gian thực hiện, Trạng thái, Ghi chú. Font chữ dễ đọc, bố cục rõ ràng, nhất quán.</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-step">
+                    <div class="flowchart-step-number">5</div>
+                    <h3 class="text-xl font-semibold text-primary mt-4 mb-1">Đính kèm chi tiết liên quan (nếu cần)</h3>
+                    <p class="text-gray-600 text-sm">Thêm deadline cho từng nhiệm vụ. Ghi chú người phụ trách (nếu làm việc nhóm), tài liệu tham khảo hoặc các lưu ý đặc biệt quan trọng.</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-step">
+                    <div class="flowchart-step-number">6</div>
+                    <h3 class="text-xl font-semibold text-primary mt-4 mb-1">Kiểm tra và chỉnh sửa checklist</h3>
+                    <p class="text-gray-600 text-sm">Đọc lại để đảm bảo các nhiệm vụ rõ ràng, đầy đủ, đúng thứ tự. Chỉnh sửa lỗi, bổ sung hoặc loại bỏ nhiệm vụ không cần thiết. Lấy góp ý (nếu làm việc nhóm).</p>
+                </div>
+                <div class="flowchart-connector"></div>
+                <div class="flowchart-step">
+                    <div class="flowchart-step-number">7</div>
+                    <h3 class="text-xl font-semibold text-primary mt-4 mb-1">Cập nhật và đánh giá hàng ngày</h3>
+                    <p class="text-gray-600 text-sm">Theo dõi tiến độ, đánh dấu các nhiệm vụ đã hoàn thành. Cuối ngày, đánh giá lại hiệu quả thực hiện, rút kinh nghiệm cho ngày tiếp theo. Điều chỉnh checklist dựa trên thực tế.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="meo-hay" class="my-10 md:my-16 scroll-mt-20">
+            <h2 class="section-title">Mẹo Hay Cho Checklist Hoàn Hảo</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-2 flex items-center"><span class="icon-style">🎯</span>Cụ thể, rõ ràng</h3>
+                    <p class="text-gray-700">Nhiệm vụ phải dễ hiểu, tránh mô tả mơ hồ. Ví dụ: thay vì "Làm việc dự án X", hãy ghi "Soạn thảo đề cương chi tiết cho chiến dịch Marketing dự án X".</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-2 flex items-center"><span class="icon-style">🚀</span>Ưu tiên thông minh</h3>
+                    <p class="text-gray-700">Luôn đặt các nhiệm vụ quan trọng và khẩn cấp lên hàng đầu. Sử dụng ma trận Eisenhower hoặc phương pháp ABCDE để phân loại hiệu quả.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-2 flex items-center"><span class="icon-style">🔄</span>Cập nhật thường xuyên</h3>
+                    <p class="text-gray-700">Checklist là công cụ "sống", không phải là một văn bản cố định. Loại bỏ các nhiệm vụ không còn phù hợp, thêm việc mới phát sinh, điều chỉnh ưu tiên khi cần.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cong-cu" class="my-10 md:my-16 scroll-mt-20">
+            <h2 class="section-title">Công Cụ Hỗ Trợ Đắc Lực</h2>
+            <div class="card max-w-3xl mx-auto">
+                <p class="text-lg text-gray-700 mb-6 text-center">Nâng tầm quản lý checklist của bạn với các phần mềm chuyên dụng. Dù là cá nhân hay đội nhóm, luôn có công cụ phù hợp để tối ưu hóa quy trình:</p>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start"><span class="icon-style mt-1">💻</span><div><strong class="text-primary">Bảng tính:</strong> Excel, Google Sheets - Linh hoạt, dễ tùy chỉnh cho nhu cầu cơ bản.</div></li>
+                    <li class="flex items-start"><span class="icon-style mt-1">📋</span><div><strong class="text-primary">Quản lý dự án:</strong> Trello, Asana, Jira - Mạnh mẽ cho làm việc nhóm, theo dõi tiến độ phức tạp.</div></li>
+                    <li class="flex items-start"><span class="icon-style mt-1">✍️</span><div><strong class="text-primary">Ghi chú & Tổ chức:</strong> Notion, Evernote, Microsoft To Do, Google Keep - Tích hợp checklist vào hệ thống ghi chú cá nhân.</div></li>
+                    <li class="flex items-start"><span class="icon-style mt-1">📱</span><div><strong class="text-primary">Ứng dụng di động chuyên biệt:</strong> TickTick, Todoist - Đồng bộ đa nền tảng, nhiều tính năng thông minh.</div></li>
+                </ul>
+                <p class="text-center mt-6 text-gray-600">Hãy chọn công cụ giúp bạn tự động hóa, theo dõi, nhắc nhở và cộng tác hiệu quả nhất!</p>
+            </div>
+        </section>
+
+        <section id="thuc-hanh" class="my-10 md:my-16 scroll-mt-20">
+            <h2 class="section-title">Thực Hành Với Checklist Mẫu</h2>
+            <p class="text-center text-lg text-gray-700 mb-8 md:mb-10 max-w-2xl mx-auto">Dưới đây là một ví dụ về checklist công việc hàng ngày bạn có thể tham khảo và tùy chỉnh cho phù hợp với công việc và phong cách của mình.</p>
+            <div class="card overflow-x-auto">
+                <table class="w-full min-w-[640px] text-left table-auto">
+                    <thead class="bg-secondary text-white">
+                        <tr>
+                            <th class="p-3 font-semibold text-sm">STT</th>
+                            <th class="p-3 font-semibold text-sm">Công việc</th>
+                            <th class="p-3 font-semibold text-sm">Ưu tiên</th>
+                            <th class="p-3 font-semibold text-sm">Thời gian</th>
+                            <th class="p-3 font-semibold text-sm text-center">Trạng thái</th>
+                            <th class="p-3 font-semibold text-sm">Ghi chú</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50 transition-colors duration-150">
+                            <td class="p-3 text-sm text-gray-700">1</td>
+                            <td class="p-3 text-sm text-gray-700">Kiểm tra và trả lời email quan trọng</td>
+                            <td class="p-3 text-sm"><span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-medium">Cao</span></td>
+                            <td class="p-3 text-sm text-gray-700">8:00 - 8:30</td>
+                            <td class="p-3 text-sm text-center"><input type="checkbox" class="form-checkbox h-5 w-5 text-secondary rounded border-gray-300 focus:ring-secondary"></td>
+                            <td class="p-3 text-sm text-gray-700">Ưu tiên email từ khách hàng A, B</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors duration-150">
+                            <td class="p-3 text-sm text-gray-700">2</td>
+                            <td class="p-3 text-sm text-gray-700">Họp nhóm dự án X đầu ngày</td>
+                            <td class="p-3 text-sm"><span class="bg-yellow-500 text-gray-800 px-2 py-0.5 rounded-full text-xs font-medium">Trung bình</span></td>
+                            <td class="p-3 text-sm text-gray-700">9:00 - 9:45</td>
+                            <td class="p-3 text-sm text-center"><input type="checkbox" class="form-checkbox h-5 w-5 text-secondary rounded border-gray-300 focus:ring-secondary"></td>
+                            <td class="p-3 text-sm text-gray-700">Chuẩn bị slide báo cáo tiến độ</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors duration-150">
+                            <td class="p-3 text-sm text-gray-700">3</td>
+                            <td class="p-3 text-sm text-gray-700">Gọi điện chăm sóc 5 khách hàng tiềm năng</td>
+                            <td class="p-3 text-sm"><span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-medium">Cao</span></td>
+                            <td class="p-3 text-sm text-gray-700">10:00 - 11:30</td>
+                            <td class="p-3 text-sm text-center"><input type="checkbox" class="form-checkbox h-5 w-5 text-secondary rounded border-gray-300 focus:ring-secondary"></td>
+                            <td class="p-3 text-sm text-gray-700">Danh sách KH: A, B, C, D, E</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors duration-150">
+                            <td class="p-3 text-sm text-gray-700">4</td>
+                            <td class="p-3 text-sm text-gray-700">Soạn thảo báo cáo doanh số tuần</td>
+                            <td class="p-3 text-sm"><span class="bg-red-500 text-white px-2 py-0.5 rounded-full text-xs font-medium">Cao</span></td>
+                            <td class="p-3 text-sm text-gray-700">14:00 - 16:00</td>
+                            <td class="p-3 text-sm text-center"><input type="checkbox" class="form-checkbox h-5 w-5 text-secondary rounded border-gray-300 focus:ring-secondary"></td>
+                            <td class="p-3 text-sm text-gray-700">Nộp cho quản lý trước 17:00</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors duration-150">
+                            <td class="p-3 text-sm text-gray-700">5</td>
+                            <td class="p-3 text-sm text-gray-700">Đọc tài liệu/học kỹ năng mới</td>
+                            <td class="p-3 text-sm"><span class="bg-green-500 text-white px-2 py-0.5 rounded-full text-xs font-medium">Thấp</span></td>
+                            <td class="p-3 text-sm text-gray-700">16:30 - 17:00</td>
+                            <td class="p-3 text-sm text-center"><input type="checkbox" class="form-checkbox h-5 w-5 text-secondary rounded border-gray-300 focus:ring-secondary"></td>
+                            <td class="p-3 text-sm text-gray-700">Chủ đề: AI trong Marketing</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="ai-tools" class="my-10 md:my-16 scroll-mt-20">
+            <h2 class="section-title">Công Cụ AI Hỗ Trợ ✨</h2>
+            <p class="text-center text-lg text-gray-700 mb-8 md:mb-10 max-w-2xl mx-auto">Tận dụng sức mạnh của Trí tuệ nhân tạo để tối ưu hóa việc xây dựng checklist và quản lý mục tiêu của bạn.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center"><span class="icon-style">💡</span>Phân tích nhiệm vụ ✨</h3>
+                    <p class="text-gray-700 mb-4">Nhập một nhiệm vụ lớn, AI sẽ giúp bạn chia nhỏ thành các bước cụ thể hơn.</p>
+                    <textarea id="taskInput" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent mb-4" rows="4" placeholder="Ví dụ: Hoàn thành báo cáo cuối năm"></textarea>
+                    <button id="breakdownTaskBtn" class="w-full bg-accent1 hover:bg-yellow-500 text-primary font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75">Chia nhỏ nhiệm vụ</button>
+                    <div id="taskOutput" class="mt-4 p-4 bg-light-gray rounded-lg border border-gray-200 text-gray-800 min-h-[80px] flex items-center justify-center text-center">
+                        <span class="text-gray-500">Kết quả sẽ hiển thị ở đây...</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl font-semibold text-primary mb-4 flex items-center"><span class="icon-style">🌟</span>Tối ưu mục tiêu SMART ✨</h3>
+                    <p class="text-gray-700 mb-4">Nhập một mục tiêu, AI sẽ giúp bạn biến nó thành mục tiêu SMART.</p>
+                    <textarea id="goalInput" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent mb-4" rows="4" placeholder="Ví dụ: Cải thiện kỹ năng giao tiếp"></textarea>
+                    <button id="refineGoalBtn" class="w-full bg-accent1 hover:bg-yellow-500 text-primary font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75">Tối ưu mục tiêu</button>
+                    <div id="goalOutput" class="mt-4 p-4 bg-light-gray rounded-lg border border-gray-200 text-gray-800 min-h-[80px] flex items-center justify-center text-center">
+                        <span class="text-gray-500">Kết quả sẽ hiển thị ở đây...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="ket-luan" class="my-10 md:my-16 scroll-mt-20 text-center">
+             <div class="card bg-primary text-white max-w-3xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Bắt Đầu Hành Trình Nâng Cao Năng Suất Ngay Hôm Nay!</h2>
+                <p class="text-lg mb-6">Checklist công việc hàng ngày là công cụ quản lý thời gian và công việc hiệu quả, giúp bạn chủ động, tập trung và đạt được nhiều thành tựu hơn. Hãy áp dụng quy trình 7 bước và các mẹo đã học để xây dựng checklist phù hợp với đặc thù công việc của bản thân. Chúc bạn thành công!</p>
+                <button class="bg-accent1 hover:bg-yellow-500 text-primary font-bold py-3 px-8 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-opacity-75">Tạo Checklist Đầu Tiên!</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 bg-gray-800 text-gray-400 text-sm">
+        <p>&copy; 2025 Infographic Checklist Hiệu Quả. Thiết kế bởi Canvas Infographics.</p>
+        <p class="mt-1">Nguồn cảm hứng từ "Dàn ý Khóa học: Xây dựng Checklist Công việc Hàng ngày Hiệu quả".</p>
+    </footer>
+
+    <script>
+        // Simple smooth scroll for anchor links in sticky nav
+        document.querySelectorAll('#sticky-nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Offset for sticky nav height if needed, but scroll-mt-20 handles it
+                    // const offsetTop = targetElement.offsetTop - document.getElementById('sticky-nav').offsetHeight;
+                    // window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        const taskInput = document.getElementById('taskInput');
+        const breakdownTaskBtn = document.getElementById('breakdownTaskBtn');
+        const taskOutput = document.getElementById('taskOutput');
+
+        const goalInput = document.getElementById('goalInput');
+        const refineGoalBtn = document.getElementById('refineGoalBtn');
+        const goalOutput = document.getElementById('goalOutput');
+
+        async function callGeminiAPI(prompt, outputElement) {
+            outputElement.innerHTML = '<span class="text-secondary">Đang xử lý...</span>';
+            outputElement.classList.add('animate-pulse');
+
+            let chatHistory = [];
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+            const payload = { contents: chatHistory };
+            const apiKey = ""; // If you want to use models other than gemini-2.0-flash or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    outputElement.innerHTML = `<pre class="whitespace-pre-wrap text-left">${text}</pre>`;
+                } else {
+                    outputElement.innerHTML = '<span class="text-red-500">Không thể tạo phản hồi. Vui lòng thử lại.</span>';
+                    console.error('Unexpected API response structure:', result);
+                }
+            } catch (error) {
+                outputElement.innerHTML = `<span class="text-red-500">Lỗi: ${error.message}. Vui lòng kiểm tra kết nối mạng hoặc thử lại sau.</span>`;
+                console.error('Error calling Gemini API:', error);
+            } finally {
+                outputElement.classList.remove('animate-pulse');
+            }
+        }
+
+        breakdownTaskBtn.addEventListener('click', () => {
+            const task = taskInput.value.trim();
+            if (task) {
+                const prompt = `Chia nhỏ nhiệm vụ sau thành các bước cụ thể, dễ thực hiện, có đánh số thứ tự và gạch đầu dòng cho từng bước. Hãy trình bày rõ ràng từng bước một, không giải thích thêm: "${task}"`;
+                callGeminiAPI(prompt, taskOutput);
+            } else {
+                taskOutput.innerHTML = '<span class="text-red-500">Vui lòng nhập nhiệm vụ để chia nhỏ.</span>';
+            }
+        });
+
+        refineGoalBtn.addEventListener('click', () => {
+            const goal = goalInput.value.trim();
+            if (goal) {
+                const prompt = `Biến mục tiêu sau thành một mục tiêu SMART (Specific, Measurable, Achievable, Relevant, Time-bound). Hãy liệt kê từng yếu tố SMART (S, M, A, R, T) một cách rõ ràng và cụ thể, không giải thích thêm: "${goal}"`;
+                callGeminiAPI(prompt, goalOutput);
+            } else {
+                goalOutput.innerHTML = '<span class="text-red-500">Vui lòng nhập mục tiêu để tối ưu.</span>';
+            }
+        });
+    </script>
+
+</body>
+</html>
